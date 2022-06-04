@@ -5,30 +5,32 @@
       { "id": 3, "label": "Относно", "path": "/about", "order": 30, "default": false },
       { "id": 4, "label": "Контакти", "path": "/contacts", "order": 40, "default": false }
     ],
-    "about": { "message": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy"},
-    "testimonials": [
-      { 
-        "id": 1,
-        "order": 10, 
-        "comment": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy", 
-        "author": "John Doe", 
-        "avatar": "https://via.placeholder.com/185x230.png?text=Dummy+image+placeholder" 
-      },
-      { 
-        "id": 2,
-        "order": 20, 
-        "comment": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy", 
-        "author": "Jane Doe", 
-        "avatar": "https://via.placeholder.com/185x230.png?text=Dummy+image+placeholder" 
-      },
-      { 
-        "id": 3,
-        "order": 30, 
-        "comment": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy", 
-        "author": "Jack Doe", 
-        "avatar": "https://via.placeholder.com/185x230.png?text=Dummy+image+placeholder" 
-      }
-    ],
+    "about": { 
+        "message": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
+        "testimonials": [
+            { 
+              "id": 1,
+              "order": 10, 
+              "comment": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy", 
+              "author": "John Doe", 
+              "avatar": "https://via.placeholder.com/185x230.png?text=Dummy+image+placeholder" 
+            },
+            { 
+              "id": 2,
+              "order": 20, 
+              "comment": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy", 
+              "author": "Jane Doe", 
+              "avatar": "https://via.placeholder.com/185x230.png?text=Dummy+image+placeholder" 
+            },
+            { 
+              "id": 3,
+              "order": 30, 
+              "comment": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy", 
+              "author": "Jack Doe", 
+              "avatar": "https://via.placeholder.com/185x230.png?text=Dummy+image+placeholder" 
+            }
+          ]
+    },
     "filterFlagButtons": [
         { 
             "id": 1,
