@@ -5,7 +5,7 @@
       { "id": 3, "label": "Относно", "path": "/about", "order": 30, "default": false },
       { "id": 4, "label": "Контакти", "path": "/contacts", "order": 40, "default": false }
     ],
-    "aboutMessage": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
+    "about": { "message": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy"},
     "testimonials": [
       { 
         "id": 1,
