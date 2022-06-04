@@ -1,23 +1,60 @@
-<div *ngIf="list$ | async as offers; else loading">
-    <div *ngIf="flagButtons$ | async as buttons" class="flex flex-row space-x-2 mt-2 justify-between">
-        <ng-container *ngFor="let button of buttons">
-            <div class="bg-primary flex flex-row flag-button" (click)="onFlagButtonClicked(button)">
-                <img [src]="getFlagSource(button.flag)" class="flag">
-                <span>{{button.label}}</span>
-            </div>
-        </ng-container>
-    </div>
-    <div class="flex flex-col items-center ">
-        <div *ngFor="let offer of offers" class="offer flex flex-row bg-primary mt-2 justify-between items-center">
-            <div>
-                Offer data
-            </div>
-            <div class="details-button border-4 border-primary hover:bg-black hover:text-white transition duration-500 ease-in-out" routerLink="{{ offer.id }}">
-                Детайли
-            </div>
+<div *ngIf="list$ | async as offers; else loading" class="px-2">
+    <div
+      *ngIf="flagButtons$ | async as buttons"
+      class="flex flex-row space-x-2 mt-2 justify-between"
+    >
+      <ng-container *ngFor="let button of buttons">
+        <div
+          class="bg-primary flex flex-row w-full border-2 border-secondary h-[45px] cursor-pointer"
+          (click)="onFlagButtonClicked(button)"
+        >
+          <img [src]="getFlagSource(button.flag)" class="w-[65px] h-full" />
+          <div class="flex justify-center items-center w-full">
+            <span class="text-2 font-medium leading-3">{{ button.label }}</span>
+          </div>
         </div>
+      </ng-container>
     </div>
-</div>
-<ng-template #loading>
+    <div class="flex flex-col items-center w-full">
+      <div
+        *ngFor="let offer of offers"
+        class="w-full h-[70px] flex flex-row mt-2 justify-between items-center border-secondary border-4"
+      >
+        <div class="pl-2">
+          <div class="pb-1">
+            <span class="text-2 leading-3 tracking-tighter font-medium font-sans"
+              >{{ offer.title }} {{ offer.model }}</span
+            >
+          </div>
+          <div
+            class="text-[12px] font-sans leading-[10px] tracking-tighter space-x-4"
+          >
+            <span>Внос от: {{offer.importFrom}}</span>
+            <span>Година на производство: {{offer.year}}</span>
+            <span>Двигател: {{getEngineName(offer.engineType)}}</span>
+          </div>
+        </div>
+        <div class="flex w-[10%] h-full">
+          <div class="flex w-full h-full" *ngIf="offer.gallery.length > 0">
+            <div class="min-w-[40px] h-full flex justify-center items-center">
+              <mat-icon> insert_photo</mat-icon>
+            </div>
+            <span
+              class="flex items-center justify-center text-2 leading-3 font-medium"
+              >{{ offer.gallery.length }}</span
+            >
+          </div>
+          <div
+            class="cursor-pointer flex border-l-4 border-secondary justify-center items-center h-full hover:bg-black hover:text-white duration-500 ease-in-out w-full px-2"
+            routerLink="{{ offer.id }}"
+          >
+            <span class="text-2 leading-3 tracking-tighter">Детайли</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #loading>
     <h3>Loading ...</h3>
-</ng-template>
+  </ng-template>
+  

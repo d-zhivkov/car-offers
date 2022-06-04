@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { MANUFACTURER_KEY } from '../../constants';
+import { EngineTypes } from '../../enums';
 import { Filter, FilterFlagButton, Offer } from '../../models';
 import { OffersService } from '../../services/offers.service';
 
@@ -13,11 +13,23 @@ import { OffersService } from '../../services/offers.service';
 export class ListComponent implements OnInit {
   list$: Observable<Offer[]>;
   flagButtons$: Observable<FilterFlagButton[]>;
+  engineTypes: typeof EngineTypes;
   filters: Filter[] = [];
 
-  constructor(private offersService: OffersService, private router: Router) {
+  constructor(private offersService: OffersService) {
+    this.engineTypes = EngineTypes;
     this.list$ = this.offersService.getAll();
     this.flagButtons$ = this.offersService.getAllFilterFlagButtons();
+  }
+
+  getEngineName(key: number): string {
+    let name = '';
+    Object.values(this.engineTypes).forEach((value, index) => {
+      if (value === key) {
+        name = Object.keys(this.engineTypes)[index];
+      }
+    });
+    return name;
   }
 
   onFlagButtonClicked(data: FilterFlagButton): void {

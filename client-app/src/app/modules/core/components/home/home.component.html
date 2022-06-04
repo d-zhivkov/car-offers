@@ -1,16 +1,31 @@
 <!-- Navbar and header-->
 <div *ngIf="menuItems$ | async as menus; else loading">
+    <div class="w-full h-full pt-3 pb-3 pl-4">
+      <span class="text-4 leading-3 tracking-tight font-semibold">
+        better-mobile.bg
+      </span>
+    </div>
     <nav class="bg-primary text-black w-full z-50">
-        <div class="text-sm lg:flex-grow flex flex-col md:flex-row pl-4 pr-4 md:flex-wrap">
-            <div *ngFor="let item of menus" class="nav-item md:block">
-                <a routerLink="{{ item.path }}" routerLinkActive="active"
-                    class="menu-item hover:text-purple-500 mr-2 active:font-bold text-center text-[12px]">
-                    {{ item.label }}
-                </a>
-            </div>
+      <div
+        class="text-sm lg:flex-grow flex flex-col justify-center md:flex-row pl-4 pr-4 md:flex-wrap"
+      >
+        <div *ngFor="let item of menus" class="nav-item md:block">
+          <div
+            class="h-5 cursor-pointer border-2 hover:bg-secondary hover:text-purple-500 flex justify-center items-center"
+          >
+            <a
+              routerLink="{{ item.path }}"
+              routerLinkActive="active"
+              class="menu-item mx-2 active:font-bold text-center text-2"
+            >
+              {{ item.label }}
+            </a>
+          </div>
         </div>
+      </div>
     </nav>
-</div>
-<ng-template #loading>
+  </div>
+  <ng-template #loading>
     <h3>Loading ...</h3>
-</ng-template>
+  </ng-template>
+  

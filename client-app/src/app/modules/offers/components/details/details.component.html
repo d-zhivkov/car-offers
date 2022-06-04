@@ -1,19 +1,27 @@
-<div *ngIf="offer$ | async as offer">
-    <div class="flex flex-row">
-        <div style="width: 50%;">
-            <h1>{{offer.title}} {{offer.model}}</h1>
-            <h3>Публикувана от: {{offer.publishedBy}}</h3>
-            <h3>Година: {{offer.year}}</h3>
-            <h3>Внос от: {{offer.importFrom}}</h3>
-            <h3>Произведено в: {{getManufacturerName(offer.manufacturer)}}</h3>
+<div *ngIf="offer$ | async as offer" class="px-2">
+    <div class="flex flex-row pt-2">
+      <div class="w-1/2 pt-2">
+        <p
+          class="pb-2 text-[25px] leading-5 tracking-tighter font-medium font-sans"
+        >
+          {{ offer.title }} {{ offer.model }}
+        </p>
+        <div class="text-[14px] font-sans leading-[10px] tracking-tighter">
+          <p>Публикувана от: {{ offer.publishedBy }}</p>
+          <p>Година: {{ offer.year }}</p>
+          <p>Внос от: {{ offer.importFrom }}</p>
+          <p>Произведено в: {{ getManufacturerName(offer.manufacturer) }}</p>
         </div>
-        <div style="width: 50%;">
-            <div class="flex flex-row justify-between">
-                <img *ngFor="let src of offer.gallery" src="{{src}}" />
-            </div>
+      </div>
+      <div class="w-1/2">
+        <div class="flex flex-row justify-between">
+          <img *ngFor="let src of offer.gallery" src="{{ src }}" />
         </div>
+      </div>
     </div>
-    <div class="description mt-2">
-        {{offer.description}}
+    <div class="text-[14px] font-sans leading-[10px] mt-2">
+      <p class="pb-2">Описание:</p>
+      {{ offer.description }}
     </div>
-</div>
+  </div>
+  

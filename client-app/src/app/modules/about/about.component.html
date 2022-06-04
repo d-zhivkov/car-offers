@@ -1,15 +1,28 @@
-<div *ngIf="aboutContext$ | async as context; else loading" class="flex flex-col justify-center items-center mx-3">
-    <h4>{{context.message}}</h4>
-    <div class="flex flex-row space-x-5">
-        <div *ngFor="let testimonial of context.testimonials" class="flex flex-col bg-primary">
-            <img [src]="testimonial.avatar" class="testimonial-avatar" />
-            <div><span>{{testimonial.author}}</span></div>
-            <div>
-                <p>{{testimonial.comment}}</p>
+<div class="flex justify-center w-full">
+    <div
+      *ngIf="aboutContext$ | async as context; else loading"
+      class="flex flex-col justify-center items-center w-[70%]"
+    >
+      <p class="pt-4 w-[45%]">{{ context.message }}</p>
+      <div class="flex flex-row space-x-5 justify-center">
+        <div
+          *ngFor="let testimonial of context.testimonials"
+          class="flex flex-col bg-primary w-[17%]"
+        >
+          <img [src]="testimonial.avatar" class="testimonial-avatar" />
+          <div class="px-1">
+            <div class="py-1">
+              <span class="italic font-semibold">{{ testimonial.author }}</span>
             </div>
+            <div>
+              <p>{{ testimonial.comment }}</p>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-<ng-template #loading>
-    <h3>Loading ...</h3>
-</ng-template>
+    <ng-template #loading>
+      <h3>Loading ...</h3>
+    </ng-template>
+  </div>
+  
