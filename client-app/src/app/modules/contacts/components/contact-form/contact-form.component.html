@@ -1,0 +1,28 @@
+<form class="bg-primary w-[300px] flex flex-col justify-center items-center" [formGroup]="contactForm">
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Изберете тема на вашият въпрос</mat-label>
+            <mat-select formControlName="topic">
+                <mat-option *ngFor="let enum of topicLabels | keyvalue" [value]="enum.value">
+                    {{enum.key}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <div *ngIf="contactForm.get('topic')?.touched && contactForm.get('topic')?.errors && contactForm.get('topic')?.hasError('required')"
+            class="text-red-600">Полето е задължително.</div>
+    </div>
+    <div>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Коментар</mat-label>
+            <textarea matInput placeholder="Напишете вашето съобщение..." formControlName="message"></textarea>
+        </mat-form-field>
+        <div *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.errors && contactForm.get('message')?.hasError('required')"
+            class="text-red-600">Полето е задължително.</div>
+    </div>
+    <div>
+        <button type="button" (click)="onSubmitButtonClicked()"
+            class="bg-secondary border-4 border-primary hover:bg-black hover:text-white h-[45px] w-[270px] transition duration-500 ease-in-out">
+            Изпрати
+        </button>
+    </div>
+</form>

@@ -1,0 +1,19 @@
+<div *ngIf="offer$ | async as offer">
+    <div class="flex flex-row">
+        <div style="width: 50%;">
+            <h1>{{offer.title}} {{offer.model}}</h1>
+            <h3>Публикувана от: {{offer.publishedBy}}</h3>
+            <h3>Година: {{offer.year}}</h3>
+            <h3>Внос от: {{offer.importFrom}}</h3>
+            <h3>Произведено в: {{getManufacturerName(offer.manufacturer)}}</h3>
+        </div>
+        <div style="width: 50%;">
+            <div class="flex flex-row justify-between">
+                <img *ngFor="let src of offer.gallery" src="{{src}}" />
+            </div>
+        </div>
+    </div>
+    <div class="description mt-2">
+        {{offer.description}}
+    </div>
+</div>

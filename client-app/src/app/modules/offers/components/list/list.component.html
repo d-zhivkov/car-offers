@@ -1,0 +1,23 @@
+<div *ngIf="list$ | async as offers; else loading">
+    <div *ngIf="flagButtons$ | async as buttons" class="flex flex-row space-x-2 mt-2 justify-between">
+        <ng-container *ngFor="let button of buttons">
+            <div class="bg-primary flex flex-row flag-button" (click)="onFlagButtonClicked(button)">
+                <img [src]="getFlagSource(button.flag)" class="flag">
+                <span>{{button.label}}</span>
+            </div>
+        </ng-container>
+    </div>
+    <div class="flex flex-col items-center ">
+        <div *ngFor="let offer of offers" class="offer flex flex-row bg-primary mt-2 justify-between items-center">
+            <div>
+                Offer data
+            </div>
+            <div class="details-button border-4 border-primary hover:bg-black hover:text-white transition duration-500 ease-in-out" routerLink="{{ offer.id }}">
+                Детайли
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template #loading>
+    <h3>Loading ...</h3>
+</ng-template>

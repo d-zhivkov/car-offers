@@ -1,0 +1,15 @@
+<div *ngIf="aboutContext$ | async as context; else loading" class="flex flex-col justify-center items-center mx-3">
+    <h4>{{context.message}}</h4>
+    <div class="flex flex-row space-x-5">
+        <div *ngFor="let testimonial of context.testimonials" class="flex flex-col bg-primary">
+            <img [src]="testimonial.avatar" class="testimonial-avatar" />
+            <div><span>{{testimonial.author}}</span></div>
+            <div>
+                <p>{{testimonial.comment}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template #loading>
+    <h3>Loading ...</h3>
+</ng-template>
