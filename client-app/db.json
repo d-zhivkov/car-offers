@@ -1,0 +1,105 @@
+{
+    "navbar": [
+      { "id": 1, "label": "Начало", "path": "/", "order": 10, "default": true },
+      { "id": 2, "label": "Обяви", "path": "/offers", "order": 20, "default": false },
+      { "id": 3, "label": "Относно", "path": "/about", "order": 30, "default": false },
+      { "id": 4, "label": "Контакти", "path": "/contacts", "order": 40, "default": false }
+    ],
+    "aboutMessage": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
+    "testimonials": [
+      { 
+        "id": 1,
+        "order": 10, 
+        "comment": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy", 
+        "author": "John Doe", 
+        "avatar": "https://via.placeholder.com/185x230.png?text=Dummy+image+placeholder" 
+      },
+      { 
+        "id": 2,
+        "order": 20, 
+        "comment": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy", 
+        "author": "Jane Doe", 
+        "avatar": "https://via.placeholder.com/185x230.png?text=Dummy+image+placeholder" 
+      },
+      { 
+        "id": 3,
+        "order": 30, 
+        "comment": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy", 
+        "author": "Jack Doe", 
+        "avatar": "https://via.placeholder.com/185x230.png?text=Dummy+image+placeholder" 
+      }
+    ],
+    "filterFlagButtons": [
+        { 
+            "id": 1,
+            "order": 10,
+            "flag": "de", 
+            "label": "Германия"
+        },
+        { 
+            "id": 2,
+            "order": 20, 
+            "flag": "it", 
+            "label": "Италия" 
+        },
+        { 
+            "id": 3,
+            "order": 30, 
+            "flag": "fr", 
+            "label": "Франция" 
+        },
+        { 
+            "id": 4,
+            "order": 40, 
+            "flag": "es", 
+            "label": "Испания" 
+        },
+        { 
+            "id": 5,
+            "order": 50, 
+            "flag": "all", 
+            "label": "Всички други" 
+        }
+    ],
+    "offers":  [
+        { 
+          "id": 1, 
+          "title": "Seat",
+          "model": "Ibiza",
+          "price": 3000,
+          "engineType": 0,
+          "manufacturer": "es",
+          "importFrom": "Белгия",
+          "publishedBy": "Георги Иванов",
+          "gallery": ["https://via.placeholder.com/200x200.png?text=Dummy+image+placeholder", "https://via.placeholder.com/200x200.png?text=Dummy+image+placeholder"],
+          "year": "1998", 
+          "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy" 
+        },
+        { 
+            "id": 2, 
+            "title": "Seat",
+            "model": "Ibiza",
+            "price": 5000,
+            "engineType": 1,
+            "manufacturer": "es",
+            "importFrom": "Белгия",
+            "publishedBy": "Георги Иванов",
+            "gallery": ["https://via.placeholder.com/200x200.png?text=Dummy+image+placeholder", "https://via.placeholder.com/200x200.png?text=Dummy+image+placeholder"],
+            "year": "1998", 
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy" 
+        },
+        { 
+            "id": 3, 
+            "title": "Seat",
+            "model": "Ibiza",
+            "price": 7000,
+            "engineType": 2,
+            "manufacturer": "es",
+            "importFrom": "Белгия",
+            "publishedBy": "Георги Иванов",
+            "gallery": ["https://via.placeholder.com/200x200.png?text=Dummy+image+placeholder", "https://via.placeholder.com/200x200.png?text=Dummy+image+placeholder"],
+            "year": "1998", 
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy"
+        }
+      ]
+  }
